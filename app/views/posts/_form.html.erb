@@ -1,0 +1,71 @@
+<%= form_for @post, :html =>{:multipart => true} do|f| %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+
+    <div class="field">
+      <%= f.label :alt_im %><br />
+      <%= f.text_area :alt_im %>
+    </div>
+
+    <div class="field">
+      <%= f.label :pre_im %><br />
+      <%= f.text_area :pre_im %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= f.fields_for :post_images do |builder| %>
+    <% if builder.object.new_record? %>
+        <p>
+            <%= builder.label :photo, "Image File" %>
+            <%= builder.file_field :photo %>
+        </p>
+    <% end %>
+<% end %>
+
+<%=  f.fields_for :post_images do |builder| %>
+        <% unless builder.object.new_record? %>
+        <p>
+          <%= link_to image_tag(builder.object.photo.url(:small)), builder.object.photo.url(:large) %>
+          
+          <%= builder.check_box :_destroy %>
+
+            </p>
+        <% end %>    
+        
+    <% end %>
+
+<% end %>
+
+
+
+
+
+
+
+
