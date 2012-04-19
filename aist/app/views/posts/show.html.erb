@@ -1,0 +1,24 @@
+<br>
+
+<p id="notice"><%= notice %></p>
+
+
+  <h2><%= @post.title %></h2>
+
+
+<p align="middle">
+        <%= @post.content %>
+</p>
+
+    <p align="middle">
+        <%= raw(@post.alt_im)%><br>
+    </p>
+
+       <% @post.post_images.each do |img|%>
+        <p align="middle">
+             <%= image_tag img.photo.url(:big)%><br>
+        </p>
+       <% end %>
+
+
+<%= link_to 'Назад', posts_path, :class => 'button_small' %>
