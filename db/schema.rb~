@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703165818) do
+ActiveRecord::Schema.define(:version => 20120703151932) do
 
   create_table "post_images", :force => true do |t|
     t.integer  "post_id"
@@ -34,15 +34,13 @@ ActiveRecord::Schema.define(:version => 20120703165818) do
 
   create_table "sponsoreds", :force => true do |t|
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "immage_file_name"
     t.string   "immage_content_type"
     t.integer  "immage_file_size"
     t.datetime "immage_updated_at"
-    t.text     "alt_im"
-    t.text     "pre_im"
   end
 
 end

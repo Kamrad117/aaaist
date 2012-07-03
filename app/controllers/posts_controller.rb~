@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  http_basic_authenticate_with :name => "Kamrad117", :password => "dagota775", :except => [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -41,18 +43,15 @@ class PostsController < ApplicationController
  
   def update
     @post = Post.find(params[:id])
+         if @post.update_attributes(params[:post])
 
-    
-      if @post.update_attributes(params[:post])
-         redirect_to @post, notice: 'Post was successfully updated.' 
+        redirect_to @post, notice: 'Post was successfully updated.'
         else
        render action: "edit"
      
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

@@ -1,4 +1,6 @@
 Aist::Application.routes.draw do
+  resources :sponsoreds
+
   resources :posts
 
   get "pages/about"

@@ -1,0 +1,23 @@
+<br/><h1>Наши подшефные:</h1>
+
+<%for sponsored in @sponsoreds %>
+       <div class="post">
+           <h2><%= link_to sponsored.name , sponsored_path(sponsored), :class => 'post_title'%></h2>
+           <%=  truncate(sponsored.description , :length => 300)  %> <%= link_to " далее " , sponsored %>
+
+
+
+         <p>
+    
+                <%= raw(sponsored.pre_im) %>
+         
+         </p>
+
+         <p align="right"><%= link_to 'Просмотр', sponsored , :class => 'button_small'%> </p>
+
+         <hr>
+      </div>
+<%end%>
+<br />
+
+

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+
+  <h1 align="center"><%= @sponsored.name %></h1>
+
+
+<p>
+
+  <%= raw(@sponsored.description) %>
+</p>
+
+
+
+<%= link_to 'Назад', sponsoreds_path , :class => :button_small%>

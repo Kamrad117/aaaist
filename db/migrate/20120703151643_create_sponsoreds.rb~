@@ -1,0 +1,12 @@
+class CreateSponsoreds < ActiveRecord::Migration
+  def change
+    create_table :sponsoreds do |t|
+      t.string :name
+      t.text :description
+      t.text :pre_im
+      t.text :alt_im
+
+      t.timestamps
+    end
+  end
+end
