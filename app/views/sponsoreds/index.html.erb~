@@ -1,4 +1,4 @@
-<br/><h1>Наши подшефные:</h1>
+<br/>
 
 <%for sponsored in @sponsoreds %>
        <div class="post">
