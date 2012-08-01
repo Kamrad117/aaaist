@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
-  http_basic_authenticate_with :name => "Kamrad117", :password => "dagota775", :except => [:index, :show]
+  http_basic_authenticate_with :name => "*********", :password => "*********", :except => [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at desc').page(params[:page]).per(25)
   end
 
   def show
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
  
   def new
     @post = Post.new
-	8.times{@post.post_images.build}   # here is set limit 8 photo
+	8.times{@post.post_images.build}   
 
  
   end
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   
   def edit
     @post = Post.find(params[:id])
-	8.times{@post.post_images.build} # and here
+	8.times{@post.post_images.build} 
   end
 
  

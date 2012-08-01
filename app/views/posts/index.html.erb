@@ -1,7 +1,7 @@
 <br>
 
 
-
+<center><%= paginate @posts %></center>
   <%for post in @posts %>
        <div class="post">
            <h2><%= link_to post.title , post_path(post), :class => 'post_title'%></h2>
@@ -25,7 +25,8 @@
       </div>
     
    <% end %>
-
+<center><%= paginate @posts %></center>
+<br>
 
 
 

@@ -1,6 +1,6 @@
 class SponsoredsController < ApplicationController
 
-http_basic_authenticate_with :name => "Kamrad117", :password => "dagota775", :except => [:index, :show]
+http_basic_authenticate_with :name => "*********", :password => "*********", :except => [:index, :show]
 
   # GET /sponsoreds
   # GET /sponsoreds.json

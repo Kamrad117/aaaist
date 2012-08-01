@@ -30,3 +30,5 @@ gem 'jquery-rails'
 gem "paperclip", "~> 2.7"
 
 gem 'thin'
+
+gem 'kaminari'
